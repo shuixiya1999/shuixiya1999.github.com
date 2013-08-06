@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://shuixiya1999.github.io/atom.xml" rel="self"/>
   <link href="http://shuixiya1999.github.io/"/>
-  <updated>2013-07-29T15:59:09+08:00</updated>
+  <updated>2013-08-06T17:17:29+08:00</updated>
   <id>http://shuixiya1999.github.io/</id>
   <author>
     <name><![CDATA[Yaos]]></name>
@@ -33,7 +33,11 @@
 <!-- more -->
 
 
-<p>最简单的处理:</p>
+<ul>
+<li><a href="#hehe">呵呵链接</a>
+最简单的处理:</li>
+</ul>
+
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -85,7 +89,8 @@
 </span><span class='line'>  include /etc/nginx/sites-enabled/*;</span></code></pre></td></tr></table></div></figure>
 
 
-<h3>具体过程</h3>
+<h3 id="hehe">具体过程</h3>
+
 
 <h4>1、在 /etc/nginx/sites-available/ 里创建一个名字为 example1.conf 的文件，把以下内容拷进去</h4>
 
