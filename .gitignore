@@ -17,3 +17,9 @@ blog/*
 images/*
 javascripts/*
 stylesheets/*
+
+favicon.png
+atom.xml
+index.html
+robots.txt
+sitemap.xml
