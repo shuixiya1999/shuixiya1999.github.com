@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://shuixiya1999.github.io/atom.xml" rel="self"/>
   <link href="http://shuixiya1999.github.io/"/>
-  <updated>2013-08-06T17:24:14+08:00</updated>
+  <updated>2013-08-08T09:34:33+08:00</updated>
   <id>http://shuixiya1999.github.io/</id>
   <author>
     <name><![CDATA[Yaos]]></name>
@@ -12,6 +12,97 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ruby对象的比较]]></title>
+    <link href="http://shuixiya1999.github.io/blog/2013/08/08/zhong-wen/"/>
+    <updated>2013-08-08T08:45:00+08:00</updated>
+    <id>http://shuixiya1999.github.io/blog/2013/08/08/zhong-wen</id>
+    <content type="html"><![CDATA[<ul>
+<li>equal?</li>
+<li>eql?</li>
+<li>==</li>
+<li>===</li>
+<li>补充
+
+<ul>
+<li>==/=== 对Numerics对象的转换</li>
+<li>=== 并不是js中的===, 虽有<code>!=</code> 但是<em>没有</em><code>!==</code></li>
+<li>=== 在大多数情况下用于case语句。</li>
+<li>=~ 用来判断正则表达式的模式是否匹配。</li>
+</ul>
+</li>
+</ul>
+
+
+<!-- more -->
+
+
+<h3>equal?</h3>
+
+<p>用来比较两个<em>对象</em>是否相同</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;Ruby&quot;</span>       <span class="c1"># 一个字符串对象。</span>
+</span><span class='line'><span class="n">b</span> <span class="o">=</span> <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;Ruby&quot;</span>   <span class="c1"># 两个字符串对象指向动一个引用。</span>
+</span><span class='line'><span class="n">a</span><span class="o">.</span><span class="n">equal?</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>      <span class="c1"># false: a和b是不同的对象。</span>
+</span><span class='line'><span class="n">b</span><span class="o">.</span><span class="n">equal?</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>      <span class="c1"># true: b和c指向同一个引用。</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>其实原理就是 <em>比较对象id</em>
+<code>a.object_id == b.object_id   # 等同于 a.equal?(b)</code></p>
+
+<h3>eql?</h3>
+
+<p>与<code>equal?</code>完全一样, 缩写形式而已</p>
+
+<h3>==</h3>
+
+<p>用来比较两个<em>对象的内容</em>是否相同</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">a</span> <span class="o">==</span> <span class="n">b</span>          <span class="c1"># true: a和b的内容相同</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>===</h3>
+
+<p>基本与<code>==</code>相同, 但存在以下<em>特殊情况</em>:</p>
+
+<ul>
+<li>Range: 用于判断等号右边的对象是否包含于等号左边的Range</li>
+<li>正则表达式: 用于判断一个字符串是否匹配模式</li>
+<li>Class: 来判断一个对象是否为类的实例</li>
+<li>Symbol: 来判断等号两边的符号对象是否相同</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">10</span><span class="p">)</span> <span class="o">===</span> <span class="mi">5</span>    <span class="c1"># true: 5属于range 1..10</span>
+</span><span class='line'><span class="sr">/\d+/</span> <span class="o">===</span> <span class="s2">&quot;123&quot;</span>  <span class="c1"># true: 字符串匹配这个模式</span>
+</span><span class='line'><span class="nb">String</span> <span class="o">===</span> <span class="s2">&quot;s&quot;</span>   <span class="c1"># true: &quot;s&quot; 是一个字符串类的实例</span>
+</span><span class='line'><span class="ss">:s</span> <span class="o">===</span> <span class="s2">&quot;s&quot;</span>       <span class="c1"># true </span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>补充</h3>
+
+<h4>==/=== 对Numerics对象的转换</h4>
+
+<h4>=== 并不是js中的===, 虽有<code>!=</code> 但是<em>没有</em><code>!==</code></h4>
+
+<h4>=== 在大多数情况下用于case语句。</h4>
+
+<h4>=~ 用来判断正则表达式的模式是否匹配。</h4>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Hello World]]></title>
