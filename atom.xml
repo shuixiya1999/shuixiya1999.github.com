@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://shuixiya1999.github.io/atom.xml" rel="self"/>
   <link href="http://shuixiya1999.github.io/"/>
-  <updated>2013-08-08T09:34:33+08:00</updated>
+  <updated>2013-08-08T09:41:48+08:00</updated>
   <id>http://shuixiya1999.github.io/</id>
   <author>
     <name><![CDATA[Yaos]]></name>
@@ -18,7 +18,7 @@
     <link href="http://shuixiya1999.github.io/blog/2013/08/08/zhong-wen/"/>
     <updated>2013-08-08T08:45:00+08:00</updated>
     <id>http://shuixiya1999.github.io/blog/2013/08/08/zhong-wen</id>
-    <content type="html"><![CDATA[<ul>
+    <content type="html"><![CDATA[<ol>
 <li>equal?</li>
 <li>eql?</li>
 <li>==</li>
@@ -32,13 +32,13 @@
 <li>=~ 用来判断正则表达式的模式是否匹配。</li>
 </ul>
 </li>
-</ul>
+</ol>
 
 
 <!-- more -->
 
 
-<h3>equal?</h3>
+<h3>1.equal?</h3>
 
 <p>用来比较两个<em>对象</em>是否相同</p>
 
@@ -56,11 +56,11 @@
 <p>其实原理就是 <em>比较对象id</em>
 <code>a.object_id == b.object_id   # 等同于 a.equal?(b)</code></p>
 
-<h3>eql?</h3>
+<h3>2.eql?</h3>
 
 <p>与<code>equal?</code>完全一样, 缩写形式而已</p>
 
-<h3>==</h3>
+<h3>3.==</h3>
 
 <p>用来比较两个<em>对象的内容</em>是否相同</p>
 
@@ -69,7 +69,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>===</h3>
+<h3>4.===</h3>
 
 <p>基本与<code>==</code>相同, 但存在以下<em>特殊情况</em>:</p>
 
@@ -92,7 +92,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>补充</h3>
+<h3>5.补充</h3>
 
 <h4>==/=== 对Numerics对象的转换</h4>
 

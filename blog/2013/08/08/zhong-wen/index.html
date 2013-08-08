@@ -16,11 +16,11 @@ eql?
 补充 ==/=== 对Numerics对象的转换
 === 并不是js中的===, 虽有!= 但是没有!==
 === 在大多数情况下用于case语句。
-=~ 用来判断正则表达式的模式是否匹配。 equal? 用来比较两个对象是否相同 1
+=~ 用来判断正则表达式的模式是否匹配。 1.equal? 用来比较两个对象是否相同 1
 2
 3
 4
-a = & &hellip;">
+a &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -102,7 +102,7 @@ a = & &hellip;">
   </header>
 
 
-<div class="entry-content"><ul>
+<div class="entry-content"><ol>
 <li>equal?</li>
 <li>eql?</li>
 <li>==</li>
@@ -116,13 +116,13 @@ a = & &hellip;">
 <li>=~ 用来判断正则表达式的模式是否匹配。</li>
 </ul>
 </li>
-</ul>
+</ol>
 
 
 <!-- more -->
 
 
-<h3>equal?</h3>
+<h3>1.equal?</h3>
 
 <p>用来比较两个<em>对象</em>是否相同</p>
 
@@ -140,11 +140,11 @@ a = & &hellip;">
 <p>其实原理就是 <em>比较对象id</em>
 <code>a.object_id == b.object_id   # 等同于 a.equal?(b)</code></p>
 
-<h3>eql?</h3>
+<h3>2.eql?</h3>
 
 <p>与<code>equal?</code>完全一样, 缩写形式而已</p>
 
-<h3>==</h3>
+<h3>3.==</h3>
 
 <p>用来比较两个<em>对象的内容</em>是否相同</p>
 
@@ -153,7 +153,7 @@ a = & &hellip;">
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>===</h3>
+<h3>4.===</h3>
 
 <p>基本与<code>==</code>相同, 但存在以下<em>特殊情况</em>:</p>
 
@@ -176,7 +176,7 @@ a = & &hellip;">
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>补充</h3>
+<h3>5.补充</h3>
 
 <h4>==/=== 对Numerics对象的转换</h4>
 
